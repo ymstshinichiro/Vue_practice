@@ -1,0 +1,38 @@
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello Vue.js</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div id="app">
+      <h2>computedとmethodsの違い</h2>
+      <h3>computed</h3>
+      <p>{{ reversedMessage }}</p>
+      <h3>methods</h3>
+      <p>{{ reversedMessageMethod() }}</p>
+    
+      <h2>getter/setter実装</h2>
+      <p>base price: <input type="text" v-model="baseprice"></p>
+      <p>tax included price: <input type="text" v-model="taxInceludedPrice"></p>
+    
+      <h2>算出プロパティのキャッシュ</h2>
+      <p>computedはキャッシュされるので全部同じのが表示される</p>
+      <h3>Computed</h3>
+      <ol>
+        <li>{{ computedNumber }}</li>
+        <li>{{ computedNumber }}</li>
+        <li>{{ computedNumber }}</li>  
+      </ol>
+      <h3>Methods</h3>
+      <ol>
+        <li>{{ methodsNumber() }}</li>
+        <li>{{ methodsNumber() }}</li>
+        <li>{{ methodsNumber() }}</li>
+      </ol>
+      <p>開発者ツールでコンソールを見るとmethodsは3回動作してるのが見れます。</p>      
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
