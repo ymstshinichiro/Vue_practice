@@ -1,0 +1,25 @@
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello Vue.js</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <p>
+    開発者ツールで見ながらやるとよい。<br>
+    transitionタグはVueの機能の一つで、<br>
+    このタグが当たるとv-enter-active,v-leave-activeなどのclassが追加される。<br>
+    これを利用してcss側でトランジションを制御する。
+    </p>
+    <div id="app">
+      <button v-on:click="show=!show">Change</button>
+      <transition>
+        <p v-show="show">
+          Hello transition
+        </p>        
+      </transition>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js">		</script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

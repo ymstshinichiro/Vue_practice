@@ -23,7 +23,7 @@ var app = new Vue({
     },
     isLarge2: true,
 
-    // インラインで当てる
+    // インラインで
     color: 'blue',
     fontSize: 36
   },

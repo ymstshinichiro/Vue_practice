@@ -1,0 +1,75 @@
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello Vue.js</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div id="app">
+    
+      <p> {{ counter }} </p>
+      
+      <p> v-on:clickの中にはJSの式を書ける </p>
+      <button v-on:click="counter++">click!</button>
+
+      <p> こんな感じでメソッド呼び出しもできる </p>
+      <button v-on:click="clickHandler">click!</button>
+
+      <p> ---------------------------  </p>
+
+      <p> コンソールに色々出してみる </p>
+      <button v-on:click="clickHandler2">click!</button>
+    
+      <p> ---------------------------  </p>
+
+      <p> イベントハンドラで引数を渡す </p>
+      <button v-on:click="clickHandler3('vue.js')">click!</button>
+      <p> {{message}} </p>
+      
+      <p> ---------------------------  </p>
+
+      <p> $eventでevent引数と独自の引数を渡す </p>
+      <button v-on:click="clickHandler4($event, 'vue.js')">click!</button>
+      <p> {{message}} </p>
+      <p> $eventはグローバル変数ぽいな。 </p>
+
+      <p> ---------------------------  </p>
+
+      <p> イベント修飾子 .once 一回だけ実行 </p>
+      <button v-on:click.once="clickHandler5">now</button>
+      <p> {{times}}</p>
+
+      <p> ---------------------------  </p>
+
+      <p> キー修飾子 keyup 特定のキー入力に反応する </p>
+      <input type="text" v-on:keyup.esc.space.up="clear" v-model="usertext" >
+      <!--
+      <input type="text" v-on:keyup.esc="clear" v-model="usertext" >
+      <input type="text" v-on:keyup.27="clear" v-model="usertext" > -->
+       <p> {{usertext}}</p>
+      <p>ESC,space,upキーのどれかが来たら入力を消去する、という動作。コメントアウトした部分のように単一の記述や、数字での記述も可能https://jp.vuejs.org/v2/guide/events.html#%E3%82%AD%E3%83%BC%E4%BF%AE%E9%A3%BE%E5%AD%90
+      </p>
+      <p> ---------------------------  </p>
+      <p> システム修飾子 .ctrl .alt .shift .meta が押された状態を感知（1クリックではない) </p>
+      <p> example) Ctrl + C で入力クリア </p>
+      <input type="text" v-on:keyup.ctrl.67="clear2" v-model="usertext2" >
+
+      <p> ---------------------------  </p>
+      <p> システム修飾子 .shift </p>
+      <p> example) shift + clickでアラート </p>
+      <div type="text" v-on:click.shift="clickalert" >
+        click me!
+      </div>
+
+      <p> ---------------------------  </p>
+      <p> v-on省略記法 </p>
+      <button type="text" @click="atclick" >click@</button>
+      <button type="text" v-on:click="atclick" >click v-on</button>
+
+
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js">		</script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
