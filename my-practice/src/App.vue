@@ -1,18 +1,13 @@
 <template>
   <div id="app">
-    <todo />
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import todo from './components/todo.vue'
-
+import 'normalize.css'
 export default {
   name: 'app',
-  components: {
-    todo
-  }
 }
 </script>
 
